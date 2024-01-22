@@ -1,0 +1,109 @@
+:root {
+  --default-font-size: 16px;
+  --default-font-family: 'Roboto', sans-serif;
+  --default-font-style: normal;
+  --default-font-weight: 400;
+  --default-line-height: 24px;
+  --default-padding: 8px 10px;
+  --button-padding: 5px 16px;
+  --default-border-radius: 2px;
+  --default-none: none;
+  --gray-5: #d9d9d9;
+  --gray-1: #fff;
+  --gray-7: #8c8c8c;
+  --gray-9: #262626;
+  --daybreak-blue-5: #40a9ff;
+  --daybreak-blue-6: #1890ff;
+  --loading-anim-light-color: #f3f3f3;
+  --disabled-background: #f5f5f5;
+  --disabled-color: #bfbfbf;
+}
+
+.font1 {
+  font-family: var(--default-font-family);
+  font-size: var(--default-font-size);
+  font-style: var(--default-font-style);
+  font-weight: var(--default-font-weight);
+  line-height: var(--default-line-height);
+}
+
+.input-field {
+  display: flex;
+  width: 320px;
+  padding: var(--default-padding);
+  align-items: center;
+  gap: 4px;
+  border-radius: var(--default-border-radius);
+  border: 1px solid var(--gray-5);
+  background: var(--gray-1);
+}
+
+.input-field1 {
+  flex: 1 0 0;
+  color: var(--gray-7);
+  border: var(--default-none);
+  outline: var(--default-none);
+}
+
+.input-field:hover {
+  border: 1px solid var(--daybreak-blue-5);
+  background: var(--gray-1);
+}
+
+.input-field:focus {
+  border: 1px solid var(--daybreak-blue-6);
+  background: var(--gray-1);
+  box-shadow: 0px 0px 4px 0px rgba(24, 144, 255, 0.5);
+}
+
+.input-field1:focus::placeholder,
+.input-field1:not(:placeholder-shown) {
+  color: var(--gray-9);
+}
+
+.submit-button {
+  margin-top: 10px;
+  display: inline-flex;
+  padding: var(--button-padding);
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--default-border-radius);
+  background: var(--daybreak-blue-6);
+  color: var(--gray-1);
+  border: var(--default-none);
+}
+
+.submit-button:hover {
+  background-color: var(--daybreak-blue-5);
+}
+
+.submit-button:active {
+  background-color: #096dd9;
+}
+
+.loading-anim {
+  border: 3px solid var(--daybreak-blue-6);
+  border-top: 3px solid var(--loading-anim-light-color);
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  animation: spin 2s linear infinite;
+  display: var(--default-none);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.submit-button:disabled {
+  border-radius: var(--default-border-radius);
+  border: 1px solid var(--gray-5);
+  background: var(--disabled-background);
+  color: var(--disabled-color);
+}
